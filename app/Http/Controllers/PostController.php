@@ -11,6 +11,18 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function countPosts()
+    {
+        $data = countPost::all();
+    
+        return view('posts.index',compact('data'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+
+
+
     public function index()
     {
         $data = Post::latest()->paginate(5);

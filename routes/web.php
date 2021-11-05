@@ -24,6 +24,12 @@ Route::get('/', function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('posts', PostController::class);
+
+    Route::get('/count-post',function(){
+        return PostController::countPosts();
+    })->name("count-posts");
+
+
 });
 
 require __DIR__.'/auth.php';

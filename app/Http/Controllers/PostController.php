@@ -11,6 +11,14 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public static function countPosts(){
+       $posts =  Post::all();
+       return count($posts);
+    }
+
+
+
     public function index()
     {
         $data = Post::latest()->paginate(5);

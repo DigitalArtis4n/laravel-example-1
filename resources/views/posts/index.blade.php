@@ -8,6 +8,7 @@
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('posts.create') }}"> Create New Post</a>
+                <a class="btn btn-primary" href="{{ route('count-posts') }}"> Count Posts</a>
             </div>
         </div>
     </div>
